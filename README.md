@@ -1,5 +1,5 @@
 # GeeksForGeeks
-Practice Questions From Geeks For Geeks
+GOG Practice Questions that i attempted
 
 Topic and difficulty wise seperation
 
