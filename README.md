@@ -4,9 +4,9 @@ Practice Questions From Geeks For Geeks
 Topic and difficulty wise seperation
 
 eg
-Array
- medium
-  maximum index
+Array/
+ medium/
+  maximum index/
    main.cpp 
 
 common mistakes:
