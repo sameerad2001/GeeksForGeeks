@@ -66,7 +66,7 @@ int main()
         }
 
         cout << "\n";
-
+        
         delete[] arr;
     }
 }
