@@ -3,49 +3,67 @@ using namespace std;
 
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int T;
+    cin >> T;
+    while (T--)
     {
-        int n, x;
-        cin >> n >> x;
-        int ln = 0, gn = 0, lm = INT_MIN, gm = INT_MAX;
-        int hx = 0;
-        int a;
-        int ret, ret2, ret3;
-        for (int i = 0; i < n; i++)
+        int num, x;
+        cin >> num >> x;
+        int arr[num];
+        for (int i = 0; i < num; i++)
+            cin >> arr[i];
+
+        int e = 0, l = 0, h = 0;
+        int greatest_smaller = INT_MIN;
+        int smallest_greater = INT_MAX;
+        for (int i = 0; i < num; i++)
         {
-            cin >> a;
-            if (a == x)
+            if (arr[i] == x)
+                e++;
+            else if (arr[i] < x)
             {
-                hx = 1;
-                continue;
-            }
-            else if (a > x)
-            {
-                gn++;
-                gm = min(gm, a);
+                l++;
+                greatest_smaller = max(greatest_smaller, arr[i]);
             }
             else
             {
-                ln++;
-                lm = max(lm, a);
+                h++;
+                smallest_greater = min(smallest_greater, arr[i]);
             }
         }
-        ret = abs(gn - ln);
-        if (hx || lm + gm == x * 2)
+
+        int to_add = 0;
+        if (num % 2 == 0)
         {
-            cout << ret << endl;
+            to_add = abs(h - l) - e + 1;
+            if (e != 1 && greatest_smaller + smallest_greater == 2 * x)
+                to_add--;
         }
+
         else
         {
-            if (lm + gm < x * 2)
-                ret2 = abs(gn - ln - 1);
+            if (e == 1 || greatest_smaller + smallest_greater == 2 * x)
+                to_add = abs(h - l);
+            else if (greatest_smaller + smallest_greater > 2 * x)
+            {
+                if (l < h)
+                    to_add = h - l + 1;
+                else
+                    to_add = l - h;
+            }
             else
-                ret2 = abs(gn - ln + 1);
-            ret = min(ret2 + 1, ret + 1);
-            cout << ret << endl;
+            {
+                if (l < h)
+                    to_add = h - l;
+                else
+                    to_add = l - h + 1;
+            }
         }
+ 
+        cout << to_add << "\n";
     }
-    return 0;
 }
