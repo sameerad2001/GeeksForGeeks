@@ -1,0 +1,34 @@
+
+ Magnets placed Linearly 
+
+ eg:
+           V
+  10, 20, 30, 40, 50, 60, 70, 80
+  +   +       -   -   -   -   -
+
+  Definitions:
+  1. Forces to the left are Positive and right are negative 
+  
+  2. force = (+/-) 1 / distance
+
+  3. ***** distance = offset = middle - arr[i] ********
+
+  3. force = force by low and high + Magnets to the left and right
+
+  4. force = force + [ 1 / (middle- arr[i])]
+  
+  ==> in example 
+  
+  . middle = (40 + 20) / 2 = 30
+  . force+ = 1 / (20 - arr[i])
+  
+  1/10   1/0   -1/10   -1/20  -1/30  -1/40  -1/50  -1/60 : Sum of these Numbers = FORCE
+  1/10   1/10    0     -1/20  -5/60  ................... 
+  10,    20,    30,    40,    50,    60,    70,    80
+                ^
+
+ if abs(force) < 0.00000001
+
+ either to the left (force is negative)
+ or to the right (force is positive)
+

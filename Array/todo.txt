@@ -1,0 +1,7 @@
+
+1. Vectors
+2. Hashing 
+3. Shrinking Window
+4. 2-D Arrays
+5. Map
+6. 0 - 1 Knapsack 
