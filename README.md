@@ -10,12 +10,14 @@ Array/
    main.cpp 
 
 ---
-##common mistakes:
+## common mistakes:
 
 - forgot to de allocate dynamic memory
    add " delete[]  arr; "
    
 - Better Template
+
+```C++
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -28,6 +30,8 @@ int main()
     
     return 0;
 }
+
+````
 
 - used endl instead of "\n"
 
