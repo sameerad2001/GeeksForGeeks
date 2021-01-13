@@ -1,7 +1,7 @@
 # GeeksForGeeks
 GOG Practice Questions that i attempted
 
-Topic and difficulty wise seperation
+Topic and difficulty wise separation
 
 eg
 Array/
@@ -9,11 +9,13 @@ Array/
   maximum index/
    main.cpp 
 
-common mistakes:
-1. forgot to dealocate dynamic memory
+---
+##common mistakes:
+
+- forgot to de allocate dynamic memory
    add " delete[]  arr; "
    
-2. Better Template
+- Better Template
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -27,4 +29,7 @@ int main()
     return 0;
 }
 
-3. used endl instead of "\n"
+- used endl instead of "\n"
+
+---
+Sameer Ahmed <sameerad2001@gmail.com>
