@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -7,46 +7,23 @@ using namespace std;
 
 int kthSmallest(int mat[MAX][MAX], int n, int k)
 {
-    int i, j, count;
-    i = j = count = 0;
-    while (i < n && j < n)
+    int *arr = new int[2 * n];
+
+    int index = 0;
+
+    for (int i = 0; i < n; i++)
     {
-        count++;
-        if (count == k)
+        for (int j = 0; j < n; j++)
         {
-            return mat[i][j];
-        }
-        else if (mat[i + 1][j] < mat[i][j + 1])
-        {
-            i++;
-        }
-        else
-        {
-            j++;
+            arr[index++] = mat[i][j];
         }
     }
 
-    while (i < n)
-    {
-        count++;
-        if (count == k)
-        {
-            return mat[i][j];
-        }
-        i++;
-    }
+    sort(arr, arr + 2 * n);
 
-    while (j < n)
-    {
-        count++;
-        if (count == k)
-        {
-            return mat[i][j];
-        }
-        j++;
-    }
+    return arr[k - 1];
 
-    return -1;
+    delete[] arr;
 }
 
 int main()

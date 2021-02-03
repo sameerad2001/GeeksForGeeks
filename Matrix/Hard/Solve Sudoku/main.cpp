@@ -19,6 +19,12 @@ bool isValid(int board[N][N], int x, int y, int value)
             return false;
     }
 
+    // for (int i = 0; i < 9; i++)
+    // {
+    //     if (board[i][y] == value)
+    //         return false;
+    // }
+
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -33,13 +39,41 @@ bool isValid(int board[N][N], int x, int y, int value)
     return true;
 }
 
+// bool isSudokuValid(int board[N][N])
+// {
+//     for (int i = 0; i < N; i++)
+//     {
+//         for (int j = 0; j < N; j++)
+//         {
+//             if (board[i][j] != 0)
+//             {
+//                 if (!isValid(board, i, j, board[i][j]))
+//                 {
+//                     return false;
+//                 }
+//             }
+//             else
+//             {
+//                 return false;
+//             }
+//         }
+//     }
+
+//     return true;
+// }
+
 int sudokuSolver(int board[N][N], int i, int j)
 {
 
-    if (i == N)
+    if (i == N && j == 8)
     {
         return 1;
     }
+
+    // if (i == N)
+    // {
+    //     return 1;
+    // }
 
     int nexti, nextj;
     if (j < 8)
@@ -83,32 +117,31 @@ int sudokuSolver(int board[N][N], int i, int j)
 
         return 0;
     }
+
+    // return 0;
 }
 
 bool SolveSudoku(int board[N][N])
 {
     if (sudokuSolver(board, 0, 0))
-        return 1;
+        return true;
 
     else
-        return 0;
+        return false;
 }
 
-int main()
+void printGrid(int board[N][N])
 {
-    int t;
-    cin >> t;
-    while (t--)
+    for (int i = 0; i < N; i++)
     {
-        int board[9][9];
-        for (int i = 0; i < 9; i++)
+        for (int j = 0; j < N; j++)
         {
-            for (int j = 0; j < 9; j++)
-            {
-                cin >> board[i][j];
-            }
-
-            cout << sudokuSolver(board, 0, 0) << endl;
+            cout << board[i][j] << " ";
         }
+        // cout << "\n";
     }
 }
+
+// int main()
+// {
+// }

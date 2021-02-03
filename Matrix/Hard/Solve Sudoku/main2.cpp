@@ -88,27 +88,20 @@ int sudokuSolver(int board[N][N], int i, int j)
 bool SolveSudoku(int board[N][N])
 {
     if (sudokuSolver(board, 0, 0))
-        return 1;
+        return true;
 
     else
-        return 0;
+        return false;
 }
 
-int main()
+void printGrid(int board[N][N])
 {
-    int t;
-    cin >> t;
-    while (t--)
+    for (int i = 0; i < N; i++)
     {
-        int board[9][9];
-        for (int i = 0; i < 9; i++)
+        for (int j = 0; j < N; j++)
         {
-            for (int j = 0; j < 9; j++)
-            {
-                cin >> board[i][j];
-            }
-
-            cout << sudokuSolver(board, 0, 0) << endl;
+            cout << board[i][j] << " ";
         }
+        // cout << "\n";
     }
 }
