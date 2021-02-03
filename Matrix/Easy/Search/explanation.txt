@@ -1,0 +1,13 @@
+Approach: The simple idea is to remove a row or column in each comparison until an element is found.
+Start searching from the top-right corner of the matrix. There are three possible cases. 
+
+The given number is greater than the current number: This will ensure,
+that all the elements in the current row are smaller than the given number as 
+the pointer is already at the right-most element and the row is sorted. Thus, 
+the entire row gets eliminated and continue the search on the next row. Here elimination means that row needs not to be searched.
+
+The given number is smaller than the current number: This will ensure, 
+that all the elements in the current column are greater than the given number. 
+Thus, the entire column gets eliminated and continue the search on the previous column i.e. the column at the immediate left.
+
+The given number is equal to the current number: This will end the search.
