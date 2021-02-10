@@ -1,0 +1,63 @@
+ 
+G(n) = aG(n-1) + bG(n-2) + c.
+
+https://www.youtube.com/watch?v=EEb6JP3NXBI
+https://www.youtube.com/watch?v=-9ISolnCCUs
+https://www.geeksforgeeks.org/generalized-fibonacci-numbers/
+https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+
+____________________________
+F(n) = f(n-1) + f(n-2)
+'
+'
+f(2) = f(0) + f(1)
+
+f(2) = [1 1][ f(0)
+              f(1)]
+
+f(3) = [1 1][ [1 1][f(0
+                    f(1))] 
+               f(1)]
+
+f(n) = [1 1][ f(n-1)
+              f(n-2)]       
+
+____________________________
+[f(n)     = [ 1 1   [ f(n-1)
+ f(n-1)]      1 0 ]   f(n-2)] 
+
+[f(2)     = [ 1 1   [ f(1)              
+ f(1)]        1 0 ]   f[0]]
+
+[f(3)     = [ 1 1   [ 1 1   [ f(1)
+ f(2)]        1 0 ]   1 0 ]   f(0)]
+
+            *******
+[f(n)     = [ 1 1   ^ (n-1)  [f(1)
+ f(n-1)]      1 0 ]           f(0)]
+
+____________________________
+BINARY EXPONENTIATION
+
+Any Number can be represented using powers of 2
+
+ a^x = a^p * a^q * a^r 
+
+eg : 
+           (64 highest power of 2 < 84)
+            V
+12^84 = 12^64 * 12^16 * 12^4
+
+now 
+
+12^4 = 12^2 * 12^2 
+12^2 = 12 * 12
+
+12^16 = 12^8 * 12^8
+12^8 = 12^4 * 12^4
+
+
+
+
+
+
