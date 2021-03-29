@@ -1,4 +1,4 @@
-Simple Solution 
+Simple Solution:
 
 1) Initialize current node as head.
 2) While next of current node is not null, do following

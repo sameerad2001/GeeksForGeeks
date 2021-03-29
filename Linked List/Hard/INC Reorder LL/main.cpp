@@ -55,7 +55,7 @@ void reorderList(Node *head)
     slow->next = NULL;
 
     // 3. Reverse Second Linked List
-    Node *previous = NULL, *current, *next = head2;
+    Node *previous = NULL, *current = NULL, *next = head2;
 
     while (next != NULL)
     {
