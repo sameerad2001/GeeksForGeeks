@@ -24,10 +24,10 @@ void removeLoop(Node *head)
     temp1 = temp2 = head;
 
     // Find where both pointers meet
+    // Detect Loop
     while (temp2 != NULL && temp2->next->next != NULL && temp1 != temp2)
     {
         temp1 = temp1->next;
-
         temp2 = temp2->next->next;
     }
 
@@ -35,20 +35,30 @@ void removeLoop(Node *head)
     if (temp1 != temp2)
         return;
 
+    if (temp1 == head)
+    {
+        while (temp2->next != temp1)
+        {
+            temp2 = temp2->next;
+        }
+
+        temp2->next = NULL;
+        return;
+    }
+
     // Find first Pointer in the Loop
     temp1 = head;
     while (temp1->next != temp2->next)
     {
-        if (temp1 == temp2->next)
-        {
-            temp2->next = NULL;
-            break;
-        }
+        // if (temp1 == temp2->next)
+        // {
+        //     temp2->next = NULL;
+        //     break;
+        // }
 
         temp1 = temp1->next;
         temp2 = temp2->next;
     }
-
     temp2->next = NULL;
 }
 
