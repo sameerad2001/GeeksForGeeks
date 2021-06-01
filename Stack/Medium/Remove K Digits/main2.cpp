@@ -6,6 +6,7 @@ using namespace std;
 
 // https://www.youtube.com/watch?v=3QJzHqNAEXs
 
+// WRONG
 string removeKdigits(string S, int k)
 {
     stack<char> st;
