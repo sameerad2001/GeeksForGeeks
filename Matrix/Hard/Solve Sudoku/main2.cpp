@@ -38,6 +38,7 @@ int sudokuSolver(int board[N][N], int i, int j)
 
     if (i == N)
     {
+        // True
         return 1;
     }
 

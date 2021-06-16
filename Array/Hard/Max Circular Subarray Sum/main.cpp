@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// ___________________Check Second File for a neater implementation____________________
+
 int kadane(int arr[], int n)
 {
     int temp, maximum;

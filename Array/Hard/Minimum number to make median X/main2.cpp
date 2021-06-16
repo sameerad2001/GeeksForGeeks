@@ -8,7 +8,7 @@ int median(int arr[], int n, int x)
     sort(arr, arr + n);
 
     int i;
-    for (i = 0; arr[(n - 1) / 2 != x]; i++)
+    for (i = 0; arr[(n - 1) / 2] != x; i++)
     {
         arr[n++] = x;
         sort(arr, arr + n);

@@ -19,10 +19,11 @@ int maxAbsolute(int arr[], int n)
 
     for (int i = 0; i < n; i++)
     {
-
+        // a[i] + i
         max1 = max(max1, arr[i] + i);
         min1 = min(min1, arr[i] + i);
 
+        // a[i] - i
         max2 = max(max2, arr[i] - i);
         min2 = min(min2, arr[i] - i);
     }
