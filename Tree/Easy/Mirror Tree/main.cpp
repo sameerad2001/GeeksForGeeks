@@ -24,7 +24,7 @@ void mirror(Node *node)
     mirror(node->left);
     mirror(node->right);
 
-    Node *temp = node->right;
+    Node *temp = node->left;
     node->left = node->right;
     node->right = temp;
 }
