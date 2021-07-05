@@ -13,9 +13,9 @@ int main()
     {
         string temp = "";
 
-        if (number % 5 == 0)
-            temp += "fizz";
         if (number % 3 == 0)
+            temp += "fizz";
+        if (number % 5 == 0)
             temp += "buzz";
         if (temp == "")
             temp += to_string(number);
